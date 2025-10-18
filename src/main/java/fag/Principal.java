@@ -3,12 +3,14 @@ package main.java.fag;
 import main.java.fag.ContaBancaria;
 import main.java.fag.Filme;
 import main.java.fag.Funcionario;
+import main.java.fag.Retangulo;
 
 public class Principal {
 	public static void main(String[] args) {
 		//contaBancaria();
 		//filmes();
-		funcionario();
+		//funcionario();
+		retangulo();
 	}
 	
 	public static void contaBancaria() {
@@ -33,5 +35,11 @@ public class Principal {
 		System.out.println("Funcionario(a): " + funcionario.getNome() + ", antigo Salario: " + funcionario.getSalario());
 		funcionario.aumentarSalario(10);
 		System.out.println("Funcionario(a): " + funcionario.getNome() + ", novo Salario: " + funcionario.getSalario());
+	}
+	
+	public static void retangulo() {
+		Retangulo retangulo = new Retangulo(5, 7);
+		System.out.println("area do retangulo: " + retangulo.area());
+		System.out.println("perimetro do retangulo: " + retangulo.perimetro());
 	}
 }
