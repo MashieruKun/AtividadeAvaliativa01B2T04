@@ -2,11 +2,13 @@ package main.java.fag;
 
 import main.java.fag.ContaBancaria;
 import main.java.fag.Filme;
+import main.java.fag.Funcionario;
 
 public class Principal {
 	public static void main(String[] args) {
 		//contaBancaria();
-		filmes();
+		//filmes();
+		funcionario();
 	}
 	
 	public static void contaBancaria() {
@@ -24,5 +26,12 @@ public class Principal {
 		System.out.println(filmeUm.exibir());
 		
 		System.out.println(filmeDois.exibir());
+	}
+	
+	public static void funcionario() {
+		Funcionario funcionario = new Funcionario("Laura", 2005);
+		System.out.println("Funcionario(a): " + funcionario.getNome() + ", antigo Salario: " + funcionario.getSalario());
+		funcionario.aumentarSalario(10);
+		System.out.println("Funcionario(a): " + funcionario.getNome() + ", novo Salario: " + funcionario.getSalario());
 	}
 }
