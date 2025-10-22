@@ -7,6 +7,9 @@ import main.java.fag.Retangulo;
 import main.java.fag.Musica;
 import main.java.fag.Pessoa;
 import main.java.fag.ContaLuz;
+import main.java.fag.BicicletaAlugada;
+import main.java.fag.ProdutoEstoque;
+import main.java.fag.Temperatura;
 
 public class Principal {
 	public static void main(String[] args) {
@@ -16,7 +19,10 @@ public class Principal {
 		//retangulo();
 		//musica();
 		//pessoa();
-		contaLuz();
+		//contaLuz();
+		//bicicletaAlugada();
+		//produtoEstoque();
+		temperatura();
 	}
 	
 	public static void contaBancaria() {
@@ -55,12 +61,32 @@ public class Principal {
 		System.out.println("Titulo: " + musicaUm.getTitulo() + " Duracao: " + musicaUm.formatarDuracao());
 		System.out.println("Titulo: " + musicaDois.getTitulo() + " Duracao: " + musicaDois.formatarDuracao());
 	}
+	
 	public static void pessoa() {
 		Pessoa pessoa = new Pessoa("Laura", 65.0, 1.66);
 		System.out.println("Nome: " + pessoa.getNome() + " IMC: " + pessoa.calcularIMC() + " Classificação: " + pessoa.classificacaoIMC());
 	}
+	
 	public static void contaLuz() {
 		ContaLuz contaLuz = new ContaLuz(50.7, 90.8);
 		System.out.println("Consumo de KW: " + contaLuz.getConsumoKwh() + " Valor por Hora: " + contaLuz.getValorKwh() + " Valor a pagar: " + contaLuz.calcularValorTotal());
+	}
+	
+	public static void bicicletaAlugada() {
+		BicicletaAlugada bicicletaAlugada = new BicicletaAlugada(2, 15);
+		System.out.println("Tempo de Uso: " + bicicletaAlugada.getHoras() + " Valor a Hora: " + bicicletaAlugada.getValorHr() + " Valor a pagar: " + bicicletaAlugada.calcularValor());
+	}
+	
+	public static void produtoEstoque() {
+		ProdutoEstoque produto = new ProdutoEstoque("bolacha", 0);
+		produto.adicionarEstoque(30);
+		produto.removerEstoque(40);
+		produto.removerEstoque(15);
+		System.out.println("Nome: " + produto.getNome() + " Estoque: " + produto.getQtd());
+	}
+	
+	public static void temperatura() {
+		Temperatura temperatura = new Temperatura(20.0);
+		System.out.println("Temperatura em Celsius: " + temperatura.getCelsius() + " Temperatura em Fahrenheit: " + temperatura.paraFahrenheit() + " Temperatura em Kelvin: " + temperatura.paraKelvin());
 	}
 }
